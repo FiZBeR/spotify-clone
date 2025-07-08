@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Just another Spotify clon more",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "spotify",
+    "clone",
+    "react",
+    "music",
+    "backend"
+  ],
+  "type": "module",
+  "author": "Cristian Campos",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/express": "^1.7.4",
+    "cloudinary": "^2.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
