@@ -1,9 +1,8 @@
 import { Router } from "express";
+import { protectRoute, requireAdmin } from "../middleware/auth.middleware.js"
 
 const route = Router();
 
-route.get("/", (req, res) => {
-    res.send("Admin route with GET method");
-});
+route.get("/", protectRoute, requireAdmin, createSong);
 
 export default route;

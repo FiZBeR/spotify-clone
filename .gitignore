@@ -1,0 +1,17 @@
+# Ignorar dependencias en cualquier carpeta
+**/node_modules/
+
+# Ignorar variables de entorno
+**/.env
+
+# Ignorar carpetas de build o distribución
+**/dist/
+**/build/
+
+# Ignorar logs
+**/*.log
+
+# Ignorar archivos de VSCode y sistemas
+.vscode/
+.DS_Store
+Thumbs.db
