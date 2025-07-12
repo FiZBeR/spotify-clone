@@ -27,5 +27,5 @@ const authCallback = async (req, res, next) => {
 }
 
 module.exports = {
-    authCallback
+    authCallback,
 }
