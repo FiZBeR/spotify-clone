@@ -1,6 +1,6 @@
-import { cleckClient } from '@clerk/express'
+import { clerkClient } from '@clerk/express'
 
-const protectRoute = async (req, res, next) => {
+export const protectRoute = async (req, res, next) => {
 
     if(!req.auth.userId){
         res.status(401).json({message: "Unauthorized - you must be logged in"});
@@ -10,10 +10,10 @@ const protectRoute = async (req, res, next) => {
     next();
 };
 
-const requireAdmin = async (req, res, next) => {
+export const requireAdmin = async (req, res, next) => {
     try {
 
-        const currentUser = await cleckClient.users.getUser(req.auth.userId);
+        const currentUser = await clerkClient.users.getUser(req.auth.userId);
         const isAdmin = process.env.ADMIN_EMAIL === currentUser.primaryEmailAddress.emailAddress;
 
         if(!isAdmin){
@@ -25,9 +25,4 @@ const requireAdmin = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
-}
-
-module.exports = {
-    protectRoute,
-    requireAdmin
 }

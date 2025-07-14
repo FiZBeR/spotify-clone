@@ -2,7 +2,7 @@ import { Song } from "../models/song.model.js";
 import { Album } from "../models/album.model.js";
 import cloudinary from "../lib/cloudinary.js";
 
-const uploadToCloudinary = async (file) => {
+export const uploadToCloudinary = async (file) => {
 
     try {
 
@@ -19,7 +19,7 @@ const uploadToCloudinary = async (file) => {
 
 }
 
-const createSong = async (req, res, next) => {
+export const createSong = async (req, res, next) => {
     try {
 
         if(!req.files || !req.files.audioFile || !req.files.imageFile){
@@ -58,7 +58,7 @@ const createSong = async (req, res, next) => {
     }
 }
 
-const deleteSong = async (req, res, next) => {
+export  const deleteSong = async (req, res, next) => {
 
     try {
 
@@ -81,7 +81,7 @@ const deleteSong = async (req, res, next) => {
     }
 }
 
-const createAlbum = async (req, res, next) => {
+export const createAlbum = async (req, res, next) => {
     try {
         
         const { title, artist, releaseYear } = req.body;
@@ -105,7 +105,7 @@ const createAlbum = async (req, res, next) => {
     }
 }
 
-const deleteAlbum = async (req, res, next) => {
+export const deleteAlbum = async (req, res, next) => {
     try {
         const { id } = req.params;
         await Song.deleteMany({ albumId: id});
@@ -118,14 +118,7 @@ const deleteAlbum = async (req, res, next) => {
     }
 }
 
-const checkAdmin = async (req, res, next) => {
+export const checkAdmin = async (req, res, next) => {
     res.status(200).json({ admin: true});
 }
 
-module.exports = {
-    createSong,
-    deleteSong,
-    createAlbum,
-    deleteAlbum,
-    checkAdmin
-}

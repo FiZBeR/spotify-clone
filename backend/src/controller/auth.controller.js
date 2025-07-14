@@ -1,6 +1,6 @@
 import { User } from "../models/user.model.js"
 
-const authCallback = async (req, res, next) => {
+export const authCallback = async (req, res, next) => {
 
     try {
 
@@ -26,6 +26,3 @@ const authCallback = async (req, res, next) => {
     }
 }
 
-module.exports = {
-    authCallback,
-}
