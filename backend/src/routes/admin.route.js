@@ -16,3 +16,4 @@ route.post("/albums", createAlbum);
 route.delete("/albums/:id", deleteAlbum);
 
 export default route;
+

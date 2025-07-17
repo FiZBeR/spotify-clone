@@ -16,7 +16,7 @@ export const getStats = async (req, res, next) => {
             Album.countDocuments(),
 
             //Para que sirve todo lo que sigue?
-            Song.agregate([
+            Song.aggregate([
                 {
                     $unionWith:{
                         coll:"albums",
