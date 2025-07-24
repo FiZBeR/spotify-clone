@@ -1,9 +1,11 @@
 import { User } from "../models/user.model.js"
 
-export const authCallback = async (req, res, next) => {
+const authCallback = async (req, res, next) => {
 
     try {
 
+        console.log("Entrendo en controlador Auth");
+        console.log("Body: ", req.body);
         const { id, firstName, lastName, imagenUrl} = req.body;
 
         //chech if user already exists
@@ -25,4 +27,6 @@ export const authCallback = async (req, res, next) => {
         next(error);
     }
 }
+
+export default authCallback;
 

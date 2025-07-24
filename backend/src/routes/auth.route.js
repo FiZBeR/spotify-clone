@@ -1,7 +1,9 @@
-import { Router } from "express";
-import { authCallback } from "../controller/auth.controller.js";
+import express from "express";
+import authCallback from "../controller/auth.controller.js";
 
-const router = Router();
+const router = express.Router();
+
+console.log("Cargando rutas de auth");
 
 router.post("/callback", authCallback);
 

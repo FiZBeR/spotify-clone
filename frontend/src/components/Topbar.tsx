@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { LayoutDashboard } from 'lucide-react';
+import { SignedOut, SignedIn, SignOutButton } from '@clerk/clerk-react';
+import SingInOAuthButtons from "./SingInOAuthButtons";
 
 const Topbar = () => {
 
@@ -15,12 +17,17 @@ const Topbar = () => {
                 {isAdmin && (
                     <Link to={"/admin"}>
                         <LayoutDashboard className="size-4 mr-2"/>
+                        Admin Dashboard
                     </Link>
                 )}
 
+                <SignedIn>
+                    <SignOutButton />
+                </SignedIn>
+
                 <SignedOut>
                     <SingInOAuthButtons />
-                </SigedOut>
+                </SignedOut>
             </div>
         </div>
     );
