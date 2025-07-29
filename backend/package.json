@@ -4,7 +4,8 @@
   "description": "Just another Spotify clon more",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "seed:album": "node src/seeds/albums.js"
   },
   "keywords": [
     "spotify",
